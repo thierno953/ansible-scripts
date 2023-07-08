@@ -27,13 +27,13 @@
 
     - name: Pull Jenkins Docker image
       docker_image:
-        name: jenkins/jenkins
+        name: jenkins/jenkins:lts
         source: pull
 
     - name: Create Jenkins container
       docker_container:
         name: jenkins
-        image: jenkins/jenkins
+        image: jenkins/jenkins:lts
         ports:
           - "8080:8080"
         volumes: "{{ jenkins_volumes }}"
